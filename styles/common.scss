@@ -1,0 +1,9 @@
+@import '@/styles/mixin.scss';
+/*超出部分文字以...显示*/
+.one-over {
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 100%;
+}

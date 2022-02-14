@@ -1,0 +1,31 @@
+
+import request from '@/utils/request';
+
+export default {
+  getVerifyCode() {
+    return request({
+      url: 'v1/manageapi/base/getVerifyCode',
+      method: 'get'
+    });
+  },
+  login(data,token) {
+    return request({
+      url: 'v1/manageapi/base/login',
+      method: 'post',
+      data:data
+    },token);
+  },
+  userIdCompanyIdFindBacklog() {
+    return request({
+      url: 'v1/manageapi/myself/userIdCompanyIdFindBacklog',
+      method: 'get'
+    });
+  },
+  workOrderAuditAttachment(data) {
+    return request({
+      url: 'v1/manageapi/auditTask/workOrderAuditAttachment',
+      method: 'post',
+      data:data
+    });
+  },
+};
