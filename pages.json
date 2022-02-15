@@ -5,6 +5,7 @@
 			"style": {
 				"navigationBarTitleText": "市场",
 				"enablePullDownRefresh": true
+				// "titleNView": false //不显示头部导航
 			}
 		},
 		{
@@ -22,7 +23,8 @@
 		{
 			"path": "pages/login/login",
 			"style": {
-				"navigationBarTitleText": "登录"
+				"navigationBarTitleText": "登录",
+				"titleNView": true
 			}
 		}
 	],
@@ -42,9 +44,10 @@
 	// },
 	"tabBar": {
 		"color": "#7A7E83",
-		"selectedColor": "#007AFF",
+		"selectedColor": "#2b9939",
 		"borderStyle": "black",
 		"backgroundColor": "#FFFFFF",
+		"fontSize": "16px",
 		"list": [{
 			"pagePath": "pages/index/index",
 			"text": "首页"
@@ -60,6 +63,10 @@
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"backgroundColor": "#F8F8F8",
+		// #ifdef H5
+		"titleNView": false //不显示头部导航
+		// #endif
+
 	}
 }

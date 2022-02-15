@@ -1,5 +1,6 @@
 <template>
 	<view class="login-box">
+		
 		<view class="logo">
 			<image src="/static/logo.png" mode="aspectFill"></image>
 		</view>
