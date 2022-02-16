@@ -16,7 +16,14 @@
 	/*每个页面公共css */
 	@import './common/common.css';
 	
-	image{
+	uni-view {
+		box-sizing: border-box;
+	}
+	
+	image {
 		vertical-align: middle;
+	}
+	page{
+		background-color: #EEEEEE;
 	}
 </style>
