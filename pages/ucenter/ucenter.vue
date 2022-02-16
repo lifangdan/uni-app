@@ -22,23 +22,18 @@
 		</view>
 		<view class="group">
 			<uni-list :border="false">
-				<!-- <uni-list-chat :avatar-circle="true" thumb-size="lg" title="Hi，您未登录"
-					avatar="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png"
-					note="ID:23232323232" link></uni-list-chat> -->
-				<uni-list-item title="列表左侧带略缩图" note="列表描述信息" :thumb="avatarUrl" thumb-size="sm" link></uni-list-item>
+				<uni-list-item title="XXXX" note="xxxx" :thumb="avatarUrl" thumb-size="sm" link></uni-list-item>
 				<!-- <uni-list-item title="列表左侧带略缩图" note="列表描述信息" :thumb="avatarUrl" thumb-size="lg" rightText="右侧文字"></uni-list-item> -->
-				<!-- <uni-list-item :show-extra-icon="true" :extra-icon="extraIcon1" title="列表左侧带扩展图标"></uni-list-item> -->
-				<uni-list-item clickable link :thumb="avatarUrl" thumb-size="sm" title="个人资料"></uni-list-item>
-				<uni-list-item clickable link :thumb="avatarUrl" thumb-size="sm" title="我的订单"></uni-list-item>
-				<uni-list-item clickable link :thumb="avatarUrl" thumb-size="sm" title="我的藏品"></uni-list-item>
-				<uni-list-item clickable link :thumb="avatarUrl" thumb-size="sm" title="我的银行卡"></uni-list-item>
+				<uni-list-item clickable link :thumb="avatarUrl" thumb-size="sm" title="XXXX" rightText="xxx"></uni-list-item>
+				<uni-list-item clickable link :thumb="avatarUrl" thumb-size="sm" title="XXXX"></uni-list-item>
+				<uni-list-item clickable link :thumb="avatarUrl" thumb-size="sm" title="XXXX"></uni-list-item>
+				<uni-list-item clickable link :thumb="avatarUrl" thumb-size="sm" title="XXXX"></uni-list-item>
 			</uni-list>
 		</view>
 		<view class="group">
 			<uni-list :border="false">
-				<uni-list-item clickable link :thumb="avatarUrl" thumb-size="sm" title="资金记录"></uni-list-item>
-				<uni-list-item clickable link :thumb="avatarUrl" thumb-size="sm" title="积分记录"></uni-list-item>
-				<uni-list-item clickable link :thumb="avatarUrl" thumb-size="sm" title="实名认证"></uni-list-item>
+				<uni-list-item clickable link :thumb="avatarUrl" thumb-size="sm" title="XXXX"></uni-list-item>
+				<uni-list-item clickable link :thumb="avatarUrl" thumb-size="sm" title="XXXX"></uni-list-item>
 				<uni-list-item clickable link :thumb="avatarUrl" thumb-size="sm" title="设置"></uni-list-item>
 			</uni-list>
 		</view>
@@ -95,7 +90,7 @@
 	}
 </script>
 
-<style>
+<style lang="scss" scoped>
 	/* #ifndef APP-PLUS-NVUE */
 	@font-face {
 		font-family: texticons;
@@ -125,7 +120,9 @@
 	}
 
 	.login {
-		/* background-color: #2b9939; */
+		.uni-list{
+			background-color: #2b9939;
+		}
 	}
 
 	.logo {

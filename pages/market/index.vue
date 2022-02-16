@@ -1,5 +1,30 @@
 <template>
 	<view>
+		<view>
+			<swiper class="swiper" :indicator-dots="true" :autoplay="true" :interval="2000" :duration="500"
+				indicator-color="#5d5856" indicator-active-color="#ffffff">
+				<swiper-item class="item">
+					<image class="banner" src="/static/banner_01.png"></image>
+				</swiper-item>
+				<swiper-item class="item">
+					<image class="banner" src="/static/banner_01.png"></image>
+				</swiper-item>
+				<swiper-item class="item">
+					<image class="banner" src="/static/banner_01.png"></image>
+				</swiper-item>
+				<swiper-item class="item">
+					<image class="banner" src="/static/banner_01.png"></image>
+				</swiper-item>
+			</swiper>
+		</view>
+		<!-- 筛选 -->
+		<view class="screen">
+			<view class="item" @click="search(item.id)" v-for="item in screenList" :key="item.id"
+				:class="{'active':active===item.id}">{{item.label}}</view>
+			<!-- <view class="item active">时间</view>
+			<view class="item">人气</view> -->
+		</view>
+		<!-- 商品列表 -->
 		<view class="goods-box">
 			<view id="left" class="left-column column">
 				<view class="goods-item" v-for="(item,index) in leftList" :key="index">
@@ -9,19 +34,20 @@
 					<view class="good-info">
 						<view class="title one-over">{{item.title}}</view>
 						<view class="name">
-							<uni-icons type="contact-filled" size="30" color="#2b9939"></uni-icons>
-							<!-- <image src="/static/logo.png" mode="widthFix"></image> -->
-							<text class="user">{{item.name}}</text>
+							<image src="/static/list_02.png"></image>
+							<text>{{item.name}}</text>
 						</view>
 						<view class="price">
 							<view class="p-left">
-								<text class="">￥</text>{{item.price}}
+								<label>￥</label>
+								<text>{{item.price}}</text>
 							</view>
 							<view class="p-right">
 								<view class="heart">
 									<uni-icons type="heart" size="20" color="#5ab56a"></uni-icons>
+									<!-- <uni-icons type="heart" size="20" color="#b6b6b6"></uni-icons> -->
 								</view>
-								<text>333</text>
+								<text>{{item.heart}}</text>
 							</view>
 						</view>
 					</view>
@@ -35,18 +61,20 @@
 					<view class="good-info">
 						<view class="title one-over">{{item.title}}</view>
 						<view class="name">
-							<uni-icons type="contact-filled" size="30" color="#2b9939"></uni-icons>
-							<text class="user">{{item.name}}</text>
+							<image src="/static/list_06.png"></image>
+							<text>{{item.name}}</text>
 						</view>
 						<view class="price">
 							<view class="p-left">
-								<text class="">￥</text>{{item.price}}
+								<label>￥</label>
+								<text>{{item.price}}</text>
 							</view>
 							<view class="p-right">
 								<view class="heart">
 									<uni-icons type="heart-filled" size="20" color="#5ab56a"></uni-icons>
+									<!-- <uni-icons type="heart" size="20" color="#b6b6b6"></uni-icons> -->
 								</view>
-								<text>253</text>
+								<text>{{item.heart}}</text>
 							</view>
 						</view>
 					</view>
@@ -64,125 +92,145 @@
 		data() {
 			return {
 				list: [{
-						img: "/static/list_01.jpeg",
+						img: "/static/list_01.png",
 						title: '我是标题我是标题我是标题我是标题我是标题我是标题',
 						name: '非洲猫1',
-						price: 1
+						price: 111,
+						heart:12
 					},
 					{
-						img: "/static/list_02.jpeg",
+						img: "/static/list_02.png",
 						title: '我是标题',
 						name: '非洲猫2',
-						price: 2
+						price: 223,
+						heart:233
 					},
 					{
-						img: "/static/list_03.jpeg",
+						img: "/static/list_03.png",
 						title: '我是标题',
 						name: '非洲猫3',
-						price: 3
+						price: 311,
+						heart:124
 					},
 					{
-						img: "/static/list_04.jpeg",
+						img: "/static/list_04.png",
 						title: '我是标题',
 						name: '非洲猫4',
-						price: 4
+						price: 1244,
+						heart:455
 					},
 					{
-						img: "/static/list_05.jpeg",
+						img: "/static/list_05.png",
 						title: '我是标题',
 						name: '非洲猫5',
-						price: 5
+						price: 155,
+						heart:56
 					},
 					{
-						img: "/static/list_06.jpeg",
+						img: "/static/list_06.png",
 						title: '我是标题',
 						name: '非洲猫6',
-						price: 6
+						price: 266,
+						heart:78
 					},
 					{
-						img: "/static/list_07.jpeg",
+						img: "/static/list_01.png",
 						title: '我是标题',
 						name: '非洲猫7',
-						price: 7
+						price: 7888,
+						heart:127
 					},
 					{
-						img: "/static/list_05.jpeg",
+						img: "/static/list_02.png",
 						title: '我是标题',
 						name: '非洲猫8',
-						price: 8
+						price: 8946,
+						heart:899
 					},
 					{
-						img: "/static/list_06.jpeg",
+						img: "/static/list_03.png",
 						title: '我是标题',
 						name: '非洲猫9',
-						price: 9
+						price: 9,
+						heart:998
 					},
 					{
-						img: "/static/list_07.jpeg",
+						img: "/static/list_04.png",
 						title: '我是标题',
 						name: '非洲猫10',
-						price: 10
+						price: 10,
+						heart:1200
 					},
 				],
-				wfList: [{
-						img: "/static/list_04.jpeg",
+				wfList:  [{
+						img: "/static/list_01.png",
 						title: '我是标题我是标题我是标题我是标题我是标题我是标题',
 						name: '非洲猫1',
-						price: 1
+						price: 111,
+						heart:12
 					},
 					{
-						img: "/static/list_02.jpeg",
+						img: "/static/list_02.png",
 						title: '我是标题',
 						name: '非洲猫2',
-						price: 2
+						price: 223,
+						heart:233
 					},
 					{
-						img: "/static/list_03.jpeg",
+						img: "/static/list_03.png",
 						title: '我是标题',
 						name: '非洲猫3',
-						price: 3
+						price: 311,
+						heart:124
 					},
 					{
-						img: "/static/list_01.jpeg",
+						img: "/static/list_04.png",
 						title: '我是标题',
 						name: '非洲猫4',
-						price: 4
+						price: 1244,
+						heart:455
 					},
 					{
-						img: "/static/list_05.jpeg",
+						img: "/static/list_05.png",
 						title: '我是标题',
 						name: '非洲猫5',
-						price: 5
+						price: 155,
+						heart:56
 					},
 					{
-						img: "/static/list_06.jpeg",
+						img: "/static/list_06.png",
 						title: '我是标题',
 						name: '非洲猫6',
-						price: 6
+						price: 266,
+						heart:78
 					},
 					{
-						img: "/static/list_07.jpeg",
+						img: "/static/list_01.png",
 						title: '我是标题',
 						name: '非洲猫7',
-						price: 7
+						price: 7888,
+						heart:127
 					},
 					{
-						img: "/static/list_05.jpeg",
+						img: "/static/list_02.png",
 						title: '我是标题',
 						name: '非洲猫8',
-						price: 8
+						price: 8946,
+						heart:899
 					},
 					{
-						img: "/static/list_06.jpeg",
+						img: "/static/list_03.png",
 						title: '我是标题',
 						name: '非洲猫9',
-						price: 9
+						price: 9,
+						heart:998
 					},
 					{
-						img: "/static/list_07.jpeg",
+						img: "/static/list_04.png",
 						title: '我是标题',
 						name: '非洲猫10',
-						price: 10
+						price: 10,
+						heart:1200
 					},
 				],
 				contentText: {
@@ -198,6 +246,20 @@
 				boxHeight: [], // 下标0和1分别为左列和右列高度
 				page: 1,
 				updateNum: 10,
+				active: null,
+				screenList: [{
+						label: '价格',
+						id: 1,
+					},
+					{
+						label: '时间',
+						id: 2,
+					},
+					{
+						label: '人气',
+						id: 3,
+					},
+				]
 			}
 		},
 		onLoad: function(options) {
@@ -314,109 +376,155 @@
 				this.page = 1
 				this.wfList = this.list
 				this.status = "loading"
+			},
+			search(id) {
+				this.active = id
 			}
 		}
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+	.swiper {
+		min-height: 464rpx;
+		width: 750rpx;
+		display: flex;
+
+		.item {
+			width: 100%;
+			position: relative;
+		}
+
+		.banner {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.screen {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		background-color: #fff;
+		margin-bottom: 46rpx;
+
+		.item {
+			height: 88rpx;
+			line-height: 88rpx;
+			font-size: 30rpx;
+			color: #969696;
+			padding: 0 40rpx;
+			// text-align: center;
+		}
+
+		.active {
+			border-bottom: 6rpx solid #000;
+			color: #000;
+			font-weight: 550
+		}
+
+	}
+
 	.goods-box {
 		display: flex;
+		// flex-flow: column wrap;
+		// column-count: 2;
+		// column-gap: 10px;
 		flex-direction: row;
 		align-items: flex-start;
-		padding: 0 6rpx;
-	}
+		padding: 0 18rpx;
 
-	.column {
-		display: flex;
-		flex-direction: row;
-		flex: 1;
-		flex-direction: column;
-		height: auto;
-		width: 50%;
-	}
-
-	.goods-item {
-		margin: 10rpx 6rpx;
-		border-radius: 10rpx;
-		overflow: hidden;
-	}
-
-	.goods-img {
-		width: 100%;
-
-	}
-
-	.goods-img image {
-		width: 100%;
-		height: auto;
-		border-top-left-radius: 10rpx;
-		border-top-right-radius: 10rpx;
-		vertical-align: middle;
-	}
-
-	.good-info {
-		padding: 20rpx;
-		font-size: 20rpx;
-		background-color: #f5f5f5;
-
-		.title {
-			font-size: 32rpx;
-			margin-bottom: 10rpx;
-		}
-
-		.name {
-			image {
-				width: 50rpx;
-				height: 50rpx;
-				border-radius: 50%;
-				margin-right: 20rpx;
-				vertical-align: middle;
-			}
-			text {
-				vertical-align: middle;
-			}
-			.user{
-				color: #999999;
-				font-size: 24rpx;
-				padding-left: 10rpx;
-			}
-		}
-
-		.price {
-			margin-top: 10rpx;
+		.column {
 			display: flex;
-			justify-content: space-between;
-			align-items: center;
+			flex-direction: row;
+			flex: 1;
+			flex-direction: column;
+			height: auto;
+			width: 50%;
 		}
 
-		.p-left {
-			color: #bb3835;
-			font-weight: 550;
-			font-size: 38rpx;
+		.goods-item {
+			margin: 0rpx 18rpx 18rpx 18rpx;
+			border-radius: 10rpx;
+			overflow: hidden;
+		}
 
-			text {
-				font-size: 24rpx;
+		.goods-img {
+			width: 100%;
+		}
+
+		.goods-img image {
+			width: 100%;
+			height: auto;
+			border-top-left-radius: 10rpx;
+			border-top-right-radius: 10rpx;
+			vertical-align: middle;
+		}
+
+		.good-info {
+			padding: 20rpx 30rpx;
+			background-color: #fff;
+
+			.title {
+				font-size: 36rpx;
+				color: #000;
+			}
+
+			.name {
+				margin: 20rpx 0;
+
+				image {
+					width: 50rpx;
+					height: 50rpx;
+					border-radius: 100%;
+					margin-right: 13rpx;
+					vertical-align: middle;
+				}
+
+				text {
+					color: #000;
+					font-size: 24rpx;
+				}
+			}
+
+			.price {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.p-left {
+				color: #bb3835;
+
+				label {
+					font-size: 24rpx;
+				}
+
+				text {
+					font-size: 38rpx;
+					font-weight: 600;
+				}
+			}
+
+			.p-right {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				.heart {
+					margin-right: 10rpx;
+				}
+
+				image {
+					width: 28rpx;
+				}
+
+				text {
+					font-size: 26rpx;
+					color: #333;
+				}
 			}
 		}
 
-		.p-right {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-
-			.heart {
-				margin-right: 8rpx;
-			}
-
-			image {
-				width: 28rpx;
-			}
-
-			text {
-				font-size: 26rpx;
-				color: #999999;
-			}
-		}
 	}
 </style>
