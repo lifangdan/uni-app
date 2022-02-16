@@ -12,10 +12,7 @@
 				<input class="input_item" v-model="password" @input="onInput" :password="!isSee" placeholder="请输入您的密码"
 					placeholder-class="grey" />
 				<uni-icons v-if="isSee" type="eye-filled" @click="isSee = false" color="#2b9939" size="20"></uni-icons>
-				<uni-icons v-else-if="!isSee" type="eye-slash-filled" @click="isSee = true" color="#cccccc" size="20"></uni-icons>
-				<!-- <image v-if="isSee" src="/static/ic_logon_display.png" mode="aspectFit" @click="isSee = false"></image>
-				<image v-else-if="!isSee" src="/static/ic_logon_hide.png" mode="aspectFit" @click="isSee = true"> -->
-				</image>
+				<uni-icons v-else-if="!isSee" type="eye-slash-filled" @click="isSee = true" color="#cccccc" size="20"></uni-icons>	
 			</view>
 			<view class="protocol_box">
 				<checkbox-group @change="checkboxChange">
