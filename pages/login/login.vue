@@ -1,6 +1,6 @@
 <template>
 	<view class="login-box">
-		
+
 		<view class="logo">
 			<image src="/static/logo.png" mode="aspectFill"></image>
 		</view>
@@ -11,8 +11,10 @@
 			<view class="input_box triangle">
 				<input class="input_item" v-model="password" @input="onInput" :password="!isSee" placeholder="请输入您的密码"
 					placeholder-class="grey" />
-				<image v-if="isSee" src="/static/ic_logon_display.png" mode="aspectFit" @click="isSee = false"></image>
-				<image v-else-if="!isSee" src="/static/ic_logon_hide.png" mode="aspectFit" @click="isSee = true">
+				<uni-icons v-if="isSee" type="eye-filled" @click="isSee = false" color="#2b9939" size="20"></uni-icons>
+				<uni-icons v-else-if="!isSee" type="eye-slash-filled" @click="isSee = true" color="#cccccc" size="20"></uni-icons>
+				<!-- <image v-if="isSee" src="/static/ic_logon_display.png" mode="aspectFit" @click="isSee = false"></image>
+				<image v-else-if="!isSee" src="/static/ic_logon_hide.png" mode="aspectFit" @click="isSee = true"> -->
 				</image>
 			</view>
 			<view class="protocol_box">
@@ -29,23 +31,6 @@
 				<button v-else>登录</button>
 			</view>
 		</view>
-		<!-- <form @submit="onSubmit">
-			<view>
-				<input name="loginName" placeholder="请输入账号" />
-			</view>
-			<view>
-				<input name="password" :password="!isSee" placeholder="请输入密码" />
-			</view>
-			<view>
-				<input name="captcha" placeholder="请输入验密码" />
-			</view>
-			<view @click="refresh">
-				<image style="width: 50px; height: 50px; background-color: #eeeeee;" :src="imgUrl"></image>
-			</view>
-			<view>
-				<button type="primary" form-type="submit">登录</button>
-			</view>
-		</form> -->
 	</view>
 </template>
 
@@ -119,7 +104,7 @@
 							//登录成功返回上一级页面
 							uni.navigateBack();
 						}, 1000);
-						
+
 					}
 				});
 			},
@@ -260,7 +245,8 @@
 		color: #333333;
 
 		text {
-			color: #2b9939;/*#5ab56a*/
+			color: #2b9939;
+			/*#5ab56a*/
 		}
 	}
 </style>
