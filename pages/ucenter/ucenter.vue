@@ -24,8 +24,8 @@
 			<uni-list :border="false">
 				<uni-list-item title="XXXX" note="xxxx" :thumb="avatarUrl" thumb-size="sm" link></uni-list-item>
 				<!-- <uni-list-item title="列表左侧带略缩图" note="列表描述信息" :thumb="avatarUrl" thumb-size="lg" rightText="右侧文字"></uni-list-item> -->
-				<uni-list-item clickable link :thumb="avatarUrl" thumb-size="sm" title="XXXX" rightText="xxx"></uni-list-item>
-				<uni-list-item clickable link :thumb="avatarUrl" thumb-size="sm" title="XXXX"></uni-list-item>
+				<uni-list-item clickable link :thumb="avatarUrl" thumb-size="sm" title="XXXX" rightText="xxx">
+				</uni-list-item>
 				<uni-list-item clickable link :thumb="avatarUrl" thumb-size="sm" title="XXXX"></uni-list-item>
 				<uni-list-item clickable link :thumb="avatarUrl" thumb-size="sm" title="XXXX"></uni-list-item>
 			</uni-list>
@@ -34,7 +34,7 @@
 			<uni-list :border="false">
 				<uni-list-item clickable link :thumb="avatarUrl" thumb-size="sm" title="XXXX"></uni-list-item>
 				<uni-list-item clickable link :thumb="avatarUrl" thumb-size="sm" title="XXXX"></uni-list-item>
-				<uni-list-item clickable link :thumb="avatarUrl" thumb-size="sm" title="设置"></uni-list-item>
+				<uni-list-item clickable link :thumb="avatarUrl" thumb-size="sm" title="XXXX"></uni-list-item>
 			</uni-list>
 		</view>
 	</view>
@@ -120,14 +120,14 @@
 	}
 
 	.login {
-		.uni-list{
+		.uni-list {
 			background-color: #2b9939;
 		}
 	}
 
 	.logo {
 		width: 95%;
-		height: 240rpx;
+		height: 300rpx;
 		padding: 20rpx;
 		background-color: #2b9939;
 		flex-direction: row;

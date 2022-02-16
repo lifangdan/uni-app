@@ -41,7 +41,7 @@
 					<view class="user">
 						<view class="u-left">
 							<image src="/static/list_01.jpeg"></image>
-							<text>MetaOne 广州元朝科技有限公司</text>
+							<text>非洲猫</text>
 						</view>
 						<view class="u-right">
 							<label>￥</label>
@@ -73,7 +73,7 @@
 					<view class="user">
 						<view class="u-left">
 							<image src="/static/list_01.jpeg"></image>
-							<text>MetaOne 广州元朝科技有限公司</text>
+							<text>非洲猫</text>
 						</view>
 						<view class="u-right">
 							<label>￥</label>
@@ -105,7 +105,7 @@
 					<view class="user">
 						<view class="u-left">
 							<image src="/static/list_01.jpeg"></image>
-							<text>MetaOne 广州元朝科技有限公司</text>
+							<text>非洲猫</text>
 						</view>
 						<view class="u-right">
 							<label>￥</label>
