@@ -3,7 +3,7 @@
 		{
 			"path": "pages/market/index",
 			"style": {
-				"navigationBarTitleText": "市场",
+				"navigationBarTitleText": "列表",
 				"enablePullDownRefresh": true
 				// "titleNView": false //不显示头部导航
 			}
@@ -53,7 +53,7 @@
 			"text": "首页"
 		}, {
 			"pagePath": "pages/market/index",
-			"text": "市场"
+			"text": "列表"
 		}, {
 			"pagePath": "pages/ucenter/ucenter",
 			"text": "我的"
