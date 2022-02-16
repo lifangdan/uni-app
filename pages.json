@@ -48,6 +48,7 @@
 		"borderStyle": "black",
 		"backgroundColor": "#FFFFFF",
 		"fontSize": "16px",
+		"height":"55px",
 		"list": [{
 			"pagePath": "pages/index/index",
 			"text": "首页"
