@@ -34,7 +34,7 @@
 					<view class="good-info">
 						<view class="title one-over">{{item.title}}</view>
 						<view class="name">
-							<image src="/static/list_02.png"></image>
+							<image src="/static/list_04.png"></image>
 							<text>{{item.name}}</text>
 						</view>
 						<view class="price">
@@ -61,7 +61,7 @@
 					<view class="good-info">
 						<view class="title one-over">{{item.title}}</view>
 						<view class="name">
-							<image src="/static/list_06.png"></image>
+							<image src="/static/list_05.png"></image>
 							<text>{{item.name}}</text>
 						</view>
 						<view class="price">
@@ -96,141 +96,141 @@
 						title: '我是标题我是标题我是标题我是标题我是标题我是标题',
 						name: '非洲猫1',
 						price: 111,
-						heart:12
+						heart: 12
 					},
 					{
 						img: "/static/list_02.png",
 						title: '我是标题',
 						name: '非洲猫2',
 						price: 223,
-						heart:233
+						heart: 233
 					},
 					{
 						img: "/static/list_03.png",
 						title: '我是标题',
 						name: '非洲猫3',
 						price: 311,
-						heart:124
+						heart: 124
 					},
 					{
 						img: "/static/list_04.png",
 						title: '我是标题',
 						name: '非洲猫4',
 						price: 1244,
-						heart:455
+						heart: 455
 					},
 					{
 						img: "/static/list_05.png",
 						title: '我是标题',
 						name: '非洲猫5',
 						price: 155,
-						heart:56
+						heart: 56
 					},
 					{
 						img: "/static/list_06.png",
 						title: '我是标题',
 						name: '非洲猫6',
 						price: 266,
-						heart:78
+						heart: 78
 					},
 					{
 						img: "/static/list_01.png",
 						title: '我是标题',
 						name: '非洲猫7',
 						price: 7888,
-						heart:127
+						heart: 127
 					},
 					{
 						img: "/static/list_02.png",
 						title: '我是标题',
 						name: '非洲猫8',
 						price: 8946,
-						heart:899
+						heart: 899
 					},
 					{
 						img: "/static/list_03.png",
 						title: '我是标题',
 						name: '非洲猫9',
 						price: 9,
-						heart:998
+						heart: 998
 					},
 					{
 						img: "/static/list_04.png",
 						title: '我是标题',
 						name: '非洲猫10',
 						price: 10,
-						heart:1200
+						heart: 1200
 					},
 				],
-				wfList:  [{
+				wfList: [{
 						img: "/static/list_01.png",
 						title: '我是标题我是标题我是标题我是标题我是标题我是标题',
 						name: '非洲猫1',
 						price: 111,
-						heart:12
+						heart: 12
 					},
 					{
 						img: "/static/list_02.png",
 						title: '我是标题',
 						name: '非洲猫2',
 						price: 223,
-						heart:233
+						heart: 233
 					},
 					{
 						img: "/static/list_03.png",
 						title: '我是标题',
 						name: '非洲猫3',
 						price: 311,
-						heart:124
+						heart: 124
 					},
 					{
 						img: "/static/list_04.png",
 						title: '我是标题',
 						name: '非洲猫4',
 						price: 1244,
-						heart:455
+						heart: 455
 					},
 					{
 						img: "/static/list_05.png",
 						title: '我是标题',
 						name: '非洲猫5',
 						price: 155,
-						heart:56
+						heart: 56
 					},
 					{
 						img: "/static/list_06.png",
 						title: '我是标题',
 						name: '非洲猫6',
 						price: 266,
-						heart:78
+						heart: 78
 					},
 					{
 						img: "/static/list_01.png",
 						title: '我是标题',
 						name: '非洲猫7',
 						price: 7888,
-						heart:127
+						heart: 127
 					},
 					{
 						img: "/static/list_02.png",
 						title: '我是标题',
 						name: '非洲猫8',
 						price: 8946,
-						heart:899
+						heart: 899
 					},
 					{
 						img: "/static/list_03.png",
 						title: '我是标题',
 						name: '非洲猫9',
 						price: 9,
-						heart:998
+						heart: 998
 					},
 					{
 						img: "/static/list_04.png",
 						title: '我是标题',
 						name: '非洲猫10',
 						price: 10,
-						heart:1200
+						heart: 1200
 					},
 				],
 				contentText: {
@@ -418,8 +418,8 @@
 		}
 
 		.active {
-			border-bottom: 6rpx solid #000;
-			color: #000;
+			border-bottom: 6rpx solid #5ab56a;
+			color: #5ab56a;
 			font-weight: 550
 		}
 

@@ -18,71 +18,42 @@
 			</swiper>
 		</view>
 		<view class="goods-list">
-			<view class="goods-item">
+			<view class="goods-item" v-for="(item,index) in list" :key="index">
 				<view class="goods-img">
-					<image src="/static/index_01.png" mode="widthFix"></image>
-					<view class="countdown">
-						即将开售 剩余时间0天2小时50分
+					<image :src="item.img" mode="widthFix"></image>
+					<view class="countdown" v-if="id!==index">
+						<CountDown @change="change" :id="index" :isClear="isClear" :endTime="item.endTime"></CountDown>
 					</view>
 				</view>
 				<view class="good-info">
 					<view class="title">
-						<view class="t-left">致命涂鸦2.0 26#</view>
+						<view class="t-left">{{item.title}}</view>
 						<view class="t-right">
 							<view class="heart">
-								<uni-icons type="heart" size="20" color="#5ab56a"></uni-icons>
+								<uni-icons :type="item.isCollect?'heart-filled':'heart'" size="20" color="#5ab56a">
+								</uni-icons>
 							</view>
 							<text>333</text>
 						</view>
 					</view>
 					<view class="stock">
-						<text>可售 <label>21</label> 份 |</text> 限量 <label>100</label> 份
+						<text>可售 <label>{{item.onSale}}</label> 份 |</text> 限量 <label>{{item.stock}}</label> 份
 					</view>
 					<view class="user">
 						<view class="u-left">
-							<image src="/static/list_01.jpeg"></image>
-							<text>非洲猫</text>
+							<image src="/static/list_04.png"></image>
+							<text>{{item.name}}</text>
 						</view>
 						<view class="u-right">
 							<label>￥</label>
-							<text class="price">1636</text>
+							<text class="price">{{item.price}}</text>
 						</view>
 					</view>
 				</view>
 			</view>
-			<view class="goods-item">
-				<view class="goods-img">
-					<image src="/static/index_02.png" mode="widthFix"></image>
-					<view class="countdown">
-						即将开售 剩余时间0天2小时50分
-					</view>
-				</view>
-				<view class="good-info">
-					<view class="title">
-						<view class="t-left">致命涂鸦2.0 26#</view>
-						<view class="t-right">
-							<view class="heart">
-								<uni-icons type="heart-filled" size="20" color="#5ab56a"></uni-icons>
-							</view>
-							<text>444</text>
-						</view>
-					</view>
-					<view class="stock">
-						<text>可售 <label>21</label> 份 |</text> 限量 <label>100</label> 份
-					</view>
-					<view class="user">
-						<view class="u-left">
-							<image src="/static/list_01.jpeg"></image>
-							<text>非洲猫</text>
-						</view>
-						<view class="u-right">
-							<label>￥</label>
-							<text class="price">1636</text>
-						</view>
-					</view>
-				</view>
-			</view>
-			<view class="goods-item">
+
+
+			<view class="goods-item" style="display: none;">
 				<view class="goods-img">
 					<image src="/static/index_03.png" mode="widthFix"></image>
 					<view class="countdown">
@@ -122,10 +93,50 @@
 </template>
 
 <script>
+	import CountDown from '@/components/countdown'
 	export default {
+		components: {
+			CountDown
+		},
 		data() {
 			return {
-				title: '首页',
+				list: [{
+						img: "/static/index_01.png",
+						title: "致命涂鸦2.0 26#",
+						onSale: 21,
+						stock: 101,
+						collect: 111,
+						isCollect: false,
+						name: "非洲猫",
+						price: 1636,
+						endTime: '2024-02-17 23:59:59',
+					},
+					{
+						img: "/static/index_02.png",
+						title: "致命涂鸦2.0 26#",
+						onSale: 11,
+						stock: 121,
+						collect: 666,
+						isCollect: true,
+						name: "非洲猫",
+						price: 1636,
+						endTime: '2022-02-17 10:35',
+					},
+					{
+						img: "/static/index_03.png",
+						title: "致命涂鸦2.0 26#",
+						onSale: 21,
+						stock: 101,
+						collect: 232,
+						isCollect: true,
+						name: "非洲猫",
+						price: 1636,
+						endTime: '2022-02-19 23:59:59',
+					}
+
+				],
+				isClear: false,
+				id: null,
 				contentText: {
 					contentdown: "上拉加载更多",
 					contentrefresh: "加载中...",
@@ -137,11 +148,20 @@
 		onLoad() {
 			// this.getData()
 		},
+		onHide() {
+			this.isClear = true
+			console.log('页面隐藏了')
+		},
+		onTabItemTap(obj) {
+			console.log('页面点击切换tab了')
+		},
 		methods: {
+			change(val) {
+				this.id = val
+			},
 			getData() {
 				this.$http.getVerifyCode().then(res => {
 					if (res.success) {
-						console.log(111111111)
 						console.log(res)
 					}
 				}).catch((err) => {
@@ -149,6 +169,7 @@
 				});
 			},
 		}
+
 	}
 </script>
 
