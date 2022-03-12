@@ -1,0 +1,11 @@
+{
+    "id": "like-button",
+    "name": "点赞冒泡效果 like-button",
+    "version": "1.2.0",
+    "description": "uni-app 点赞冒泡效果，兼容nvue。",
+    "keywords": [
+        "nvue",
+        "小程序",
+        "h5"
+    ]
+}

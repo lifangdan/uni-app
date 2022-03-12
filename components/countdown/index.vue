@@ -62,7 +62,6 @@
 							lefth = Math.floor(lefttime / (1000 * 60 * 60) % 24), //计算小时数
 							leftm = Math.floor(lefttime / (1000 * 60) % 60), //计算分钟数
 							lefts = Math.floor(lefttime / 1000 % 60); //计算秒数
-						console.log(999999999)
 						_this.count = '即将开售 剩余时间 ' + leftd + "天" + lefth + "小时" + leftm + "分" + lefts + '秒'
 					} else {
 						_this.count = ''

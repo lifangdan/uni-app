@@ -29,11 +29,13 @@
 					<view class="title">
 						<view class="t-left">{{item.title}}</view>
 						<view class="t-right">
-							<view class="heart">
-								<uni-icons :type="item.isCollect?'heart-filled':'heart'" size="20" color="#5ab56a">
-								</uni-icons>
+							<view class="heart" @click="like(index)">
+								<like-button>
+									<uni-icons :type="item.isCollect?'heart-filled':'heart'" size="20" color="#5ab56a">
+									</uni-icons>
+								</like-button>
 							</view>
-							<text>333</text>
+							<text>{{item.collect}}</text>
 						</view>
 					</view>
 					<view class="stock">
@@ -65,6 +67,7 @@
 						<view class="t-left">致命涂鸦2.0 26#</view>
 						<view class="t-right">
 							<view class="heart">
+
 								<uni-icons type="heart-filled" size="20" color="#5ab56a"></uni-icons>
 							</view>
 							<text>555</text>
@@ -143,6 +146,7 @@
 					contentnomore: "没有更多数据了"
 				},
 				status: "no=more",
+				site: []
 			}
 		},
 		onLoad() {
@@ -156,6 +160,10 @@
 			console.log('页面点击切换tab了')
 		},
 		methods: {
+			like(index) {
+				this.$set(this.list[index],'isCollect',true)
+				this.$set(this.list[index],'collect',this.list[index].collect+1)
+			},
 			change(val) {
 				this.id = val
 			},
@@ -256,6 +264,7 @@
 
 				.heart {
 					margin-right: 10rpx;
+
 				}
 
 				text {
